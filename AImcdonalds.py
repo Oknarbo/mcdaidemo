@@ -79,7 +79,7 @@ with tab3:
     st.warning(f"ŠPICA je u {sati[max_idx]} – pripremi +3 čovjeka na liniji!")
     # Dodaj ovo na kraj tvog app.py (prije footer-a)
 
-tab1, tab2, tab3, tab4 = st.tabs(["Raspored", "Trening", "Prognoza", "Tagalog Tutor"])
+tab1, tab2, tab3, tab4 = st.tabs(["Raspored", "Trening", "Prognoza", "Tagalog"])
 
 with tab4:
     st.header("🇵🇭 Tagalog podrška – za crew i menadžere")
@@ -111,3 +111,4 @@ with tab4:
             col3.write(f"*{izgovor}*")
             
         st.balloons()
+
