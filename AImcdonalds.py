@@ -75,4 +75,39 @@ with tab3:
     st.plotly_chart(fig, use_container_width=True)
     
     max_idx = podaci.index(max(podaci))
+
     st.warning(f"ŠPICA je u {sati[max_idx]} – pripremi +3 čovjeka na liniji!")
+    # Dodaj ovo na kraj tvog app.py (prije footer-a)
+
+tab1, tab2, tab3, tab4 = st.tabs(["Raspored", "Trening", "Prognoza", "Tagalog Tutor"])
+
+with tab4:
+    st.header("🇵🇭 Tagalog podrška – za crew i menadžere")
+    
+    izbor = st.radio("Odaberi:", ["Trening za filipinske zaposlenike", "Tutor za hrvatske menadžere"])
+    
+    if izbor == "Trening za filipinske zaposlenike":
+        st.subheader("Paano gumawa ng Big Mac?")
+        st.write("1. Lower bun → special sauce → lettuce → onion → beef patty → pickles → cheese")
+        st.write("2. Middle bun → sauce → lettuce → onion → beef patty → cheese")
+        st.write("3. Top bun → serve with smile 😊")
+        st.success("Salamat po! Magaling ka talaga! 🎉")
+        
+    else:
+        st.subheader("Osnovne fraze za menadžere")
+        fraze = {
+            "Hvala": ("Salamat", "sa-LA-mat"),
+            "Molim": ("Pakiusap", "pa-ki-U-sap"),
+            "Odličan posao!": ("Magaling!", "ma-GA-ling"),
+            "Super si to napravio/la": ("Ang galing mo!", "ang GA-ling mo"),
+            "Brže molim te": ("Bilisan mo nga", "bi-LI-san mo nga"),
+            "Dobrodošao u tim": ("Maligayang pagdating!", "ma-li-ga-yang pag-da-TING"),
+        }
+        
+        for hr, (tag, izgovor) in fraze.items():
+            col1, col2, col3 = st.columns([2,2,3])
+            col1.write(f"**{hr}**")
+            col2.write(tag)
+            col3.write(f"*{izgovor}*")
+            
+        st.balloons()
